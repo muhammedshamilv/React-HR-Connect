@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
   name: '',
+  is_admin: false,
 };
 
 const userSlice = createSlice({
@@ -10,6 +11,7 @@ const userSlice = createSlice({
   reducers: {
     updateUser: (state, action) => {
       state.name = action.payload.name;
+      state.is_admin = action.payload.is_admin;
     },
   },
 });
@@ -17,5 +19,5 @@ const userSlice = createSlice({
 export const { updateUser } = userSlice.actions;
 export default userSlice.reducer;
 export const selectName = (state) => {
-  return { name: state?.name.name };
+  return { name: state?.user.name, is_admin: state?.user.is_admin };
 };

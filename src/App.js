@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/home';
+import Home from './pages/homePage';
 import Login from './pages/login';
 import PrivateOutlet from './utils/PrivateOutlet';
 import PublicOutlet from './utils/PublicOutlet';
@@ -14,6 +14,9 @@ function App() {
           </Route>
           <Route element={<PrivateOutlet />}>
             <Route element={<Home />} path='/home' />
+            <Route element={<>project</>} path='/project' />
+            <Route element={<>employee</>} path='/employee' />
+            <Route element={<>grievance</>} path='/grievance' />
           </Route>
         </Routes>
       </BrowserRouter>

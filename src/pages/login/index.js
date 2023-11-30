@@ -17,7 +17,7 @@ const Login = () => {
       email,
       password,
       successCB: (res) => {
-        dispatch(updateUser({ name: res.user.email }));
+        dispatch(updateUser({ name: res.user.email, is_admin: res.is_admin }));
         console.log({ res });
         LocalStorageService.setToken(res.access);
         navigate('/home');
