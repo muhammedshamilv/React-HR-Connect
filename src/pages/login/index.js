@@ -20,6 +20,7 @@ const Login = () => {
         dispatch(updateUser({ name: res.user.email, is_admin: res.is_admin }));
         console.log({ res });
         LocalStorageService.setToken(res.access);
+        LocalStorageService.setUser(res.user.email);
         navigate('/home');
       },
     });

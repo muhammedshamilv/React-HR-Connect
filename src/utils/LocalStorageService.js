@@ -27,7 +27,7 @@ class LocalStorageService {
 
   static getUser = () => {
     const loggedUser = localStorage.getItem('user');
-    return loggedUser ? JSON.parse(loggedUser) : null;
+    return loggedUser;
   };
 }
 export default LocalStorageService;

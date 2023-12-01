@@ -35,15 +35,15 @@ const Home = () => {
     },
     // More products...
   ];
-  console.log(values.is_admin);
+  const name = LocalStorageService.getUser();
   return (
-    <div className='bg-gray-200 h-screen'>
+    <div className='bg-slate-200 mdm:h-screen'>
       <div className='flex justify-between'>
-        <div className='ml-4'>{values.name}</div>
-        <div className='text-cyan-400 font-extrabold text-4xl md:text-lg sm:text-center'>
+        <div className='ml-4 sm:hidden'>{name}</div>
+        <div className='text-lime-700 sm:flex-grow sm:pl-20 sm:text-2xl text-center font-extrabold text-4xl'>
           HAMON TECHNOLOGIES
         </div>
-        <div className='mr-4'>
+        <div className='pr-4'>
           <button
             onClick={() => {
               LocalStorageService.clearToken();
@@ -54,7 +54,7 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className='flex items-center justify-center'>
+      <div className='flex md:flex-col items-center justify-center'>
         {products.map((product) => (
           <Card data={product} />
         ))}
